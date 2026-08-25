@@ -351,14 +351,14 @@ export default function Bifrost() {
       <section className="relative min-h-screen flex flex-col justify-center pt-[72px] border-b border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full py-24">
 
-          <div style={rv(heroVisible, 0)} className="flex items-center gap-4 mb-16">
-            <span className="text-[11px] font-mono text-white/30 tracking-[0.25em] uppercase">Plan-A Solutions</span>
-            <span className="h-px flex-1 max-w-[60px] bg-white/15" />
-            <span className="text-[11px] font-mono text-white/30 tracking-[0.25em] uppercase">B2B Commerce · Kosovo</span>
+          <div style={rv(heroVisible, 0)} className="flex flex-wrap items-center gap-3 sm:gap-4 mb-10 sm:mb-16">
+            <span className="text-[10px] sm:text-[11px] font-mono text-white/30 tracking-[0.2em] sm:tracking-[0.25em] uppercase">Plan-A Solutions</span>
+            <span className="h-px flex-1 max-w-[40px] sm:max-w-[60px] bg-white/15" />
+            <span className="text-[10px] sm:text-[11px] font-mono text-white/30 tracking-[0.2em] sm:tracking-[0.25em] uppercase">B2B Commerce · Kosovo</span>
           </div>
 
           <h1
-            style={{ ...rv(heroVisible, 80), fontSize: "clamp(80px, 13vw, 160px)", lineHeight: 0.9, fontWeight: 800, letterSpacing: "-0.03em", marginBottom: "2.5rem" }}
+            style={{ ...rv(heroVisible, 80), fontSize: "clamp(52px, 16vw, 160px)", lineHeight: 0.9, fontWeight: 800, letterSpacing: "-0.03em", marginBottom: "2.5rem" }}
             className="text-white"
           >
             Bifröst
@@ -396,12 +396,12 @@ export default function Bifrost() {
             </a>
           </div>
 
-          <div style={rv(heroVisible, 400)} className="flex items-end justify-between mt-20 pt-8 border-t border-white/[0.06]">
+          <div style={rv(heroVisible, 400)} className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mt-16 sm:mt-20 pt-8 border-t border-white/[0.06]">
             <div>
               <p className="text-white/20 text-[11px] font-mono uppercase tracking-widest mb-1">Midgard</p>
               <p className="text-white/50 text-sm font-medium">Buyers — businesses, restaurants, retailers</p>
             </div>
-            <div className="text-right">
+            <div className="sm:text-right">
               <p className="text-white/20 text-[11px] font-mono uppercase tracking-widest mb-1">Asgard</p>
               <p className="text-white/50 text-sm font-medium">Distributors — suppliers & wholesalers</p>
             </div>
@@ -457,9 +457,9 @@ export default function Bifrost() {
                   </div>
                 </div>
                 {/* Category nav */}
-                <div className="px-4 py-2 bg-white border-b border-gray-100 flex gap-2 overflow-hidden">
+                <div className="px-4 py-2 bg-white border-b border-gray-100 flex gap-2 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                   {["Kryefaqja", "Ushqime", "Pije", "Higjienë", "Shëndeti"].map((c, i) => (
-                    <span key={c} className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${i === 0 ? "bg-violet-600 text-white" : "text-gray-500 bg-gray-100"}`}>{c}</span>
+                    <span key={c} className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap shrink-0 ${i === 0 ? "bg-violet-600 text-white" : "text-gray-500 bg-gray-100"}`}>{c}</span>
                   ))}
                 </div>
                 {/* Banner */}
@@ -478,7 +478,7 @@ export default function Bifrost() {
                 {/* Products row */}
                 <div className="px-4 pb-5 bg-white">
                   <p className="text-gray-900 font-bold text-sm mb-3">Produktet më të kërkuara</p>
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                     {["Uthull Bazilik", "Vaj Ulliri 500ml", "Toilet Cleaner"].map((name) => (
                       <div key={name} className="border border-gray-100 rounded-xl p-3 bg-gray-50">
                         <div className="h-12 w-full bg-gray-200 rounded-lg mb-2" />
@@ -537,11 +537,13 @@ export default function Bifrost() {
               </div>
             </div>
             {/* Screen content */}
-            <div className="p-4 bg-[#f0f0f0]">
-              {activeTab === 0 && <DashboardOverview />}
-              {activeTab === 1 && <DashboardOrders />}
-              {activeTab === 2 && <DashboardOrderDetail />}
-              {activeTab === 3 && <DashboardReports />}
+            <div className="p-2 sm:p-4 bg-[#f0f0f0] overflow-x-auto">
+              <div className="min-w-[640px] sm:min-w-0">
+                {activeTab === 0 && <DashboardOverview />}
+                {activeTab === 1 && <DashboardOrders />}
+                {activeTab === 2 && <DashboardOrderDetail />}
+                {activeTab === 3 && <DashboardReports />}
+              </div>
             </div>
           </div>
         </div>
