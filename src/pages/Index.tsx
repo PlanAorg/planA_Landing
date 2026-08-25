@@ -5,14 +5,16 @@ import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Clients } from "@/components/Clients";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-white text-gray-900">
       <Header />
       <Hero />
-      <About />
       <Services />
+      <About />
+      <Clients />
       <Contact />
       <Footer />
     </div>
